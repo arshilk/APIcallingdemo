@@ -32,4 +32,18 @@ public class ServiceCaller {
         });
     }
 
+    public void showData(JSONObject object, final IAsyncWorkCompletedCallback workCompletedCallback) {
+        String url = Contants.SERVICE_BASE_URL + Contants.show;
+        new ServiceHelper().callService(url, object, new IServiceSuccessCallback() {
+            @Override
+            public void onDone(String doneWhatCode, String result, String error) {
+                Toast.makeText(context, result, Toast.LENGTH_SHORT).show();
+                if (result != null) {
+                    workCompletedCallback.onDone(result, true);
+                } else {
+                    workCompletedCallback.onDone("SignUpService done", false);
+                }
+            }
+        });
+    }
 }

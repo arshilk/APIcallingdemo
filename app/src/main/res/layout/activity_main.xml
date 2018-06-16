@@ -46,12 +46,29 @@
         android:layout_margin="15sp"
         android:id="@+id/rollno" />
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SUBMIT"
-        android:id="@+id/submit"
-        android:layout_gravity="center"/>
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT"
+            android:layout_marginLeft="60dp"
+            android:id="@+id/submit"
+            android:layout_gravity="left"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SHOW"
+            android:layout_marginLeft="60dp"
+            android:id="@+id/show"
+            android:layout_gravity="right"/>
+
+
+    </LinearLayout>
 
 
 </LinearLayout>

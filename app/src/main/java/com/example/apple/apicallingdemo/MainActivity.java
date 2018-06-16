@@ -23,7 +23,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
 
     EditText name,second_name,roll_no;
-    Button submit;
+    Button submit,show;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         second_name = findViewById(R.id.second_name);
         roll_no  = findViewById(R.id.rollno);
         submit = findViewById(R.id.submit);
+        show = findViewById(R.id.show);
+
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
                 String Second_Name = second_name.getText().toString().trim();
                 String rollno = roll_no.getText().toString().trim();
                 userValidate(Name,Second_Name,rollno);
+            }
+        });
+
+        show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,show.class));
             }
         });
 
